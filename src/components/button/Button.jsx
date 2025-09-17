@@ -1,20 +1,15 @@
 import { cn } from "../../../utils/common";
 
-export default function Button({ value = 5, className ,onClick}) {
-  const isNumber = !isNaN(Number(value));
-
-
+export default function Button({ text = 'Button', className ,onClick}) {
   return (
     <button
     onClick={onClick}
-    type="button"
-    value={value}
       className={cn(
-        "font-mono-space px-4 py-2 capitalize focus:border-0 focus:bg-primary cursor-pointer bg-secondary text-light-gray rounded-sm transition duration-300 hover:bg-primary hover:text-secondary",
+        "font-mono-space text-center px-4 py-2 capitalize focus:border-0  cursor-pointer   rounded-sm transition duration-300  hover:text-secondary bg-primary hover:bg-light-slate focus:bg-dark-slate text-secondary",
         className
       )}
     >
-      {isNumber ? `${value}%` : value}
+      {text}
     </button>
   );
 }
